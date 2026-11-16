@@ -14,12 +14,15 @@
 
 新增按推定年級、當期學院及系所計算的開課供給代理指標，並檢查跨系、跨院與非學士班課程的實際選課。供給與首次修讀呈正向關聯，但目前無法由開課筆數確認個人真正可選的課程；詳見上述專題結果。
 
+進一步在同一樣本比較三種供給定義、檢查供給對較晚批次的額外預測資訊，並對齊觀察時間分析首次修讀後的持續與再進入。方法、數字與限制見[供給敏感度與修課後續路徑](專題_供給敏感度與修課後續路徑.md)。
+
 在已設定本機 MySQL 連線的專案根目錄執行：
 
 ```powershell
 uv sync --locked
 uv run --locked python .\src\analyze_undergraduate_eight_plus.py
 uv run --locked python .\src\analyze_undergraduate_stage_supply.py
+uv run --locked python .\src\analyze_project_research_next.py
 ```
 
 彙總結果寫入被 Git 排除的 `outputs/undergraduate_eight_plus/`；程式不將學生識別碼輸出到這些彙總檔。
