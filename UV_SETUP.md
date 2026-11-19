@@ -30,4 +30,4 @@ uv lock
 uv sync --locked
 ```
 
-套件版本修改後，將 `pyproject.toml` 和 `uv.lock` 一起提交。`requirements.txt` 保留給舊執行流程參考；新增或更新依賴以 `pyproject.toml` 為準，避免兩份清單分岔。
+套件版本修改後，將 pyproject.toml 和 uv.lock 一起提交。依賴統一由這兩個檔案管理，已移除重複的 requirements.txt。

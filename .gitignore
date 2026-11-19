@@ -49,3 +49,7 @@ tmp/
 *.out
 *.toc
 *.synctex.gz
+
+# 本機封存與報告
+/local_archive/
+*.pdf

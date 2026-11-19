@@ -19,7 +19,7 @@ from analyze_undergraduate_stage_supply import (
     department_stage_supply, first_start_risk, offering_data, stage_supply,
 )
 from english_taught_analysis import DEFAULT_MYSQL, HERE, TERMS
-from run_dual_project_stats import student_term_data
+from student_data import student_term_data
 
 
 SUPPLY_PROXIES = {

@@ -14,7 +14,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 from english_taught_analysis import DEFAULT_MYSQL, HERE, TERMS, frame
-from run_dual_project_stats import (
+from student_data import (
     grouped_participation, save_csv, source_completeness_by_term, student_term_data,
 )
 

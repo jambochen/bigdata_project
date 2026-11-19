@@ -14,7 +14,7 @@ from pathlib import Path
 import pandas as pd
 
 from english_taught_analysis import DEFAULT_MYSQL, HERE
-from run_dual_project_stats import student_term_data
+from student_data import student_term_data
 
 
 COLLEGES = {

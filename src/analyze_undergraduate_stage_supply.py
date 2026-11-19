@@ -15,7 +15,7 @@ from sklearn.linear_model import LogisticRegression
 
 from analyze_undergraduate_eight_plus import COLLEGES, summarize
 from english_taught_analysis import DEFAULT_MYSQL, HERE, TERMS, frame
-from run_dual_project_stats import student_term_data
+from student_data import student_term_data
 
 
 def offering_data(args: argparse.Namespace) -> pd.DataFrame:
