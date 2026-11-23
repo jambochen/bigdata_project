@@ -9,6 +9,7 @@
 | 程式 | 用途與狀態 |
 | --- | --- |
 | src/analyze_language_conversion.py | 已實作唯讀候選盤點，核對課名、必修、學制、學分、教師與前後成績；T 分數保留作探索 |
+| src/analyze_conversion_first_attempt.py | 已實作首次可見選入者的 60 分門檻、停修、未知及衝突分類；固定四學期再次選入與追蹤可見性 |
 | src/analyze_undergraduate_eight_plus.py | 既有八學期大學部樣本、路徑與成績背景 |
 | src/analyze_undergraduate_stage_supply.py | 既有學院、推定年級供給代理與首次修讀關聯 |
 | src/analyze_project_research_next.py | 既有供給敏感度、跨批次檢查與後續路徑 |
@@ -17,6 +18,8 @@
 | src/undergraduate_*.py | 八學期入口相依的成績、首次修讀與摘要特徵分群 |
 
 ## 下一步（尚未完成）
+
+首次選入結果已完成原始分層彙總，尚未做背景調整或建立比較組。此處「首次」是資料範圍內首次可見；60 分是數字門檻代理，不是已核對的正式通過旗標。「四學期內再次選入」不直接等於教務上的重修。
 
 1. 核對課綱、各屆必修對象、名額、教師與評分；初篩全英語是同季可見紀錄判定，不代替正式制度。
 2. 逐課計算平均、中位數、標準差、四分位距、第 25／50／75 百分位數，分開呈現成績水準與差距。
@@ -30,6 +33,9 @@
 
     uv sync --locked
     uv run --locked python .\src\analyze_language_conversion.py
+    uv run --locked python .\src\analyze_conversion_first_attempt.py
+
+首次選入結果留在 outputs/conversion_first_attempt/。先讀所有狀態並處理衝突，再找首次選入；不要求連續八學期。缺值和衝突保留在主要分母，另報已知成績分母。再次選入比例限日曆至少有四學期且學生紀錄在窗末或更晚仍可見者；這是可見性限制，不保證期間無缺漏，也不證明其他人未再次選入。首次紀錄在 1051 者另列左截斷警示。需正式應修母群才能分析延後選課。
 
 背景分析依序：
 

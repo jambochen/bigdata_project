@@ -53,3 +53,15 @@ tmp/
 # 本機封存與報告
 /local_archive/
 *.pdf
+
+# Two-project layout: all confidential/local material remains ignored after moving.
+outputs/
+local_archive/
+**/undergraduate_department_rules.json
+**/analysis_results.json
+**/historical_*_profile.json
+**/historical_*_import_report.json
+**/分析結果.md
+**/歷史資料_欄位與鍵值說明.md
+**/專案移轉與1051-1092分析規劃.md
+*.tex
